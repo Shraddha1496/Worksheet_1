@@ -1,0 +1,91 @@
+Statistics worksheet 1 : Q10-Q15
+
+Q10 : What do you understand by the term Normal Distribution?
+===>  - A normal distribution is always shows in bell curve.
+      - In normal distribution, mean=0 and standard deviation=1	
+      - In this, skweness is zero in both side.
+      - Normal distributions are symmetrical.
+      - In normal distribution,the mean, mode and median are all equal.
+------------------------------------------------------------------------------------------------------------------------------
+Q11 : How do you handle missing data? What imputation techniques do you recommend?
+===> How do you handle missing data? 
+    ---------------------------------
+There are multiple ways of handling the missing data, few are as follows : 
+1. Mean replacement : Replace missing values by mean.
+		      It Works easy n fast
+		      It won't affect the mean and sample size of entire dataset.
+Disadvanteges : It won't work on categorical data.
+	        It only works on column level,therefore misses correlation between features.
+   		It would not be very accurate.
+		
+2. Dropping : Drop the unwanted data column or row
+    	      It works best, if we work on huge dataset where dropping a unwanted column.
+              We just need to make sure that dropping row doesn't bias the dataset.
+Disadvanteges : It never going to be the right answer for the best approach. 
+ 	        Because, we may see the realtionship of every feature.
+                So, It may affect the accuracy. 
+
+	What imputation techniques do you recommend?
+      -----------------------------------------------
+To overcome above drawbacks there are some imputation techniques which works best, few are as follows :
+1. KNN : It find K-nearest row and average their values.
+	 It works on numeriacal data by using euclidean distance.
+         It also works on categorical data by using Hamming distance.
+  But, KNN works best on numerical data.
+
+2. Deep learning : It works well on categorical data.But it's complicated. because a lot of code involved.
+
+3.Multiple regression : Find the linear and non-linear relationship between feature and other features.
+----------------------------------------------------------------------------------------------------------------------------------------------------
+Q12 : What is A/B testing?
+===> - A/B Tesing is basically used to compare two different products.
+     - Those comparision done on the basis of user input.
+Let's take an example of e-commerce site
+In Youtube, If suppose I'm watching a data science cource video(which one is best?). At the same time, there are adds pop-up or some thumbnails are their, if suppose I click on any add or other suggected video over there. If I search on th course again on other website, the same adds might pop-up again.And suppose I again go for Youtube look for something else this adds pop-up again because last time I clicked on it.
+How this happens?
+Due to A/B testing.Because many organization prefers this. Here we can get the customer analysis that this perticular type of cuatomer click on this perticular adds, which will get saved at the back-end.
+Advantages : 
+1. It gives the data analysis very well to identify that what kind of cuatomers like what about perticular topic which user was searching for.
+2. It will get easy for user to search because no need to search again because of popping-up of same add again.
+
+This is the concept of A/B testing.
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+Q13 : Is mean imputation of missing data acceptable practice?
+===> Mean replacement : Replace missing values by mean.
+		      It Works easy n fast
+		      It won't affect the mean and sample size of entire dataset.
+Disadvanteges : It won't work on categorical data.
+	        It only works on column level,therefore misses correlation between features.
+   		It would not be very accurate.
+----------------------------------------------------------------------------------------------------------------------------------------------------
+Q14 : What is linear regression in statistics?
+===>    - Linear regression is a type of predictive analysis.
+	- It predict the outcome of dependent variable on the bases of independent variable.
+	- It plots a best fit line for analysis on the bases of y=mx+c
+ How to	plot best fit line ?
+----------------------------
+Let's plot the datapoints in  graph of x-axis and y-axis.
+Here, the line plots on the bases of intercept and coefficient.
+
+What is intercept and coefficent?
+line equation : y=mx+c
+where m=coefficient
+      c=intercept
+
+if x=1 then then y^=1  where y^=mx+c(equation for predicted line)
+but if m=1 then cost function=0 then I've to change m=0.5 and plot a line again(analyse by scaling starts from 0.5 on both x&y axis)
+So there is a cost function which gives the predicted points.I'll try to find out the cost value when my m=0.5 then cost function=0.58
+Cost function=1/2m summation of i=1 to m (y^-y)^2
+-------------------------------------------------
+The line plots by calculating the differece between the each n every actual data point with the predicted data point.
+and the m & c gives the coefficient and intercept.
+Intercept tells that where to start plotting the line 
+Coefficient gives the angle which means at which angle have to extend the best fit line.
+
+In this the way the linear regression works.
+------------------------------------------------------------------------------------------------------------------------------------------------
+Q15 : What are the various branches of statistics
+===> It is attached in jupyter file. Kidly see this for Q15.
+
+
+

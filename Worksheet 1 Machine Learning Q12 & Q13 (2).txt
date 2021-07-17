@@ -1,0 +1,74 @@
+Questions and Answers
+
+Q12.Which Linear Regression training algorithm can we use if we have a training set with millions of 
+	features?
+===> Since there are millions of features, we cannot use Normal Equations (it will be very, very computationally expensive). Instead we can use Gradient Descent, where it has 3 algorithms as follows : 
+1. batch gradient descent
+2. stochastic gradient descent
+3. mini-batch gradient descent
+
+
+1. batch gradient descent : 
+----------------------------
+This is a type of gradient descent which processes all the training examples for each iteration of gradient descent. But if the number of training examples is large, then batch gradient descent is computationally very expensive. Hence if the number of training examples is large, then batch gradient descent is not preferred. Instead, we prefer to use stochastic gradient descent or mini-batch gradient descent
+
+How does the batch gradient descent work?
+===>As we need to calculate the gradient on the whole dataset to perform just one update, batch gradient descent can be very slow.We calculate gradient of cost function using following relation: summation (Ya-Yb)^2.
+Let's say we have dataset of 1,000,000.
+This algo takes 1st feature, predict label compute loss and update parameter and this cycle will go on. hence, batch gradient descent is computationally very expensive.
+
+
+2. stochastic gradient descent : 
+--------------------------------
+Batch Gradient Descent turns out to be a  slower algorithm. So, for faster computation, we prefer to use stochastic gradient descent.
+The first step of algorithm is to randomize the whole training set. Then, for updation of every parameter we use only one training example in every iteration to compute the gradient of cost function. As it uses one training example in every iteration this algo is faster for larger data set. In SGD, one might not achieve accuracy, but the computation of results are faster.
+
+How it works?
+ - Shuffle the training data set to avoid pre-existing order of examples.
+ - Partition the training data set into m examples.
+
+It shares most of the advantages and the disadvantages with mini-batch version. Below are the ones that are specific to SGD:
+ - It adds even more noise to the learning process than mini-batch that helps improving generalization error. However, this would increase the run time.
+ - We can’t utilize vectorization over 1 example and becomes very slow. Also, the variance becomes large since we only use 1 example for each learning step.
+
+
+
+3. Mini Batch gradient descent : 
+-----------------------------------
+This is a type of gradient descent which works faster than both batch gradient descent and stochastic gradient descent. Mini batch algorithm is the most favorable and widely used algorithm that makes precise and faster results using a batch of ‘ m ‘  training examples. In mini batch algorithm rather than using  the complete data set, in every iteration we use a set of ‘m’ training examples called batch to compute the gradient of the cost function. Common mini-batch sizes range between 50 and 256, but can vary for different applications.
+In this way, algorithm : 
+ - reduces the variance of the parameter updates, which can lead to more stable convergence.
+ - can make use of highly optimized matrix, that  makes computing of  gradient very efficient.
+
+Conclusion : 
+------------
+Hence we can use stochastic gradient descent and Mini Batch gradient descent if we have a training set with millions of features where stochastic gradient descent might imbalace with accracy but the computation will be faster. Mini Batch gradient descent gives more accuracy than stochastic gradient descent.
+----------------------------------------------------------------------------------------------------------------------------------------------------
+
+Q13.Which algorithms will not suffer or might suffer, if the features in training set have very different scales?
+===>The Gradient Descent suffers from features of different scales, because the model will take a longer time to reach the global maximum. We can always scale the features to eliminate this problem.
+
+The gradient algorithm is used to feature the data before the iterative calculation to accelerate the convergence speed of the algorithm. There are usually two methods for feature scaling: 
+1. Normalization methods 
+2. Standardization
+
+1. Normalization methods : 
+It helps to scale down the features between 0-1.
+ 
+- Normalization (MinMaxScaler) : 
+--------------------------------
+It is calculated by following formula : 
+X_norm = X-X_min/X_max-X_min
+-----------------------------
+
+2.Standardization (Z-Score Normalization)
+Standardization help to scale down the feature on the bases of standard normal distribution.
+ - In standard normal distribution, the mean=0 and standard deviation(std)=1.
+ - It is calculated by z=x-mean(mue)/std
+                       ------------------
+
+When we should use standardscaler and minmaxscaler?
+===> standardscaler perfoems better than the minmaxscaler. But, in some area we would need to perfoem minmaxscaler.
+example,in artificial neural networks, we can perform minmaxscaler because we need to scale down values between 0-1.which will easy to understand.
+let's take a example of images.So, images are between 0-255 pixels. If we want to sclae down those values, we always have to do between 0-1.
+-----------------------------------------------------------------------------------------------------------------------------------------------------
